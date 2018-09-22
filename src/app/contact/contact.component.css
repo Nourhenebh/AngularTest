@@ -1,0 +1,44 @@
+.add, .edit, .delete{
+  outline: none;
+  background: none;
+  border: none;
+}
+
+ .delete, .edit{
+  padding: 5px 10px;
+  cursor: pointer;
+  width:100%;
+}
+
+
+.add{
+  float: right;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 0;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+  .add:hover{
+    background: #ffffff;
+  color: #00adee;}
+ 
+ .edit{
+  background: #2199e8;
+  color: #ffffff;
+ }
+  .edit:hover{
+    background: darken(#2199e8, 10%);
+  
+}
+
+.delete{
+  background: #EC5840;
+  color: #ffffff;
+}  
+   .delete:hover{
+    background: darken(#EC5840, 10%);
+  }
+.error{color:red;font-weight:bold;}

@@ -1,0 +1,143 @@
+<!--mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Contact Information</mat-card-title>
+    <span class="toolbar-spacer"></span>
+   
+  </mat-toolbar>
+</mat-card-header-->
+
+<mat-card-content>
+  <div class="container">
+        <form #f="ngForm"   (ngsubmit)="onSubmit(f)" [formGroup]="_contactForm">
+    
+        <div class="form-group row">
+            <label for="name-input" class="col-4 col-form-label">Name : </label>
+            <div class="col-8">
+            <input class="form-control" type="text" [(ngModel)]="model.name" name="name" #ctrl1="ngModel"  class="form-control" id="input1" placeholder=""
+                            [class.form-control-danger]="ctrl1.invalid && ctrl1.touched" required>
+                     <small class="form-text error" *ngIf="ctrl1.invalid && ctrl1.touched && ctrl1.errors['required']">
+                         Required field!
+                     </small>
+            </div>
+            </div>
+          
+            <div class="form-group row">
+                <label for="userName-input" class="col-4 col-form-label">UserName : </label>
+                <div class="col-8">
+                <input class="form-control" type="text" [(ngModel)]="model.username" name="username" #ctrl2="ngModel"  class="form-control" id="input2" placeholder=""
+                            [class.form-control-danger]="ctrl2.invalid && ctrl2.touched" required>
+                     <small class="form-text error" *ngIf="ctrl2.invalid && ctrl2.touched && ctrl2.errors['required']">
+                         Required field!
+                     </small>
+                </div>
+                </div>
+            
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-4 col-form-label">Email : </label>
+                    <div class="col-8">
+                    <input class="form-control"  type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="model.email" name="email" #ctrl3="ngModel"  class="form-control" id="input3" placeholder=""
+                            [class.form-control-danger]="ctrl3.invalid && ctrl3.touched" required>
+                     <small class="form-text error" *ngIf="ctrl3.touched  && ctrl3.invalid ">
+                         Invalid Email !
+                     </small>
+					 <!--small class="form-text error" *ngIf="ctrl3.touched && ctrl3.invalid ">
+                         Invalid Email !
+                     </small-->
+                    </div>
+                    </div>
+			
+                     <div formGroupName="address" class="form-group row">
+                           <label for="adresse-input" class="col-4 col-form-label">Adresse </label>
+                           <div class="col-8">
+                         </div>
+    
+                   
+                     <div class="form-group row">
+                           <label for="street-input" class="col-4 col-form-label"> street : </label>
+                           <div class="col-8">
+                           <input class="form-control" type="text" [(ngModel)]="model.address.street" name="street" #ctrl4="ngModel"  class="form-control" id="input4" 
+               [class.form-control-danger]="ctrl4.invalid && ctrl4.touched" required>
+        <small class="form-text error" *ngIf="ctrl4.invalid && ctrl4.touched && ctrl4.errors['required']">
+               Required field!
+           </small>
+      </div>
+      </div>
+           
+                           <div class="form-group row">
+                                         <label for="suite-input" class="col-4 col-form-label">suite : </label>
+                                         <div class="col-8">
+                                         <input class="form-control" type="text" [(ngModel)]="model.address.suite" name="suite" #ctrl5="ngModel"  class="form-control" id="input5" 
+                             [class.form-control-danger]="ctrl5.invalid && ctrl5.touched" required>
+                      <small class="form-text error" *ngIf="ctrl5.invalid && ctrl5.touched && ctrl5.errors['required']">
+                           Required field!
+                       </small>
+                  </div>
+                  </div>
+                           <div class="form-group row">
+                                   <label for="city-input" class="col-4 col-form-label">city : </label>
+                                   <div class="col-8">
+                                   <input class="form-control" type="text" [(ngModel)]="model.address.city" name="city" #ctrl6="ngModel"  class="form-control" id="input6"
+                       [class.form-control-danger]="ctrl6.invalid && ctrl6.touched" required>
+                <small class="form-text error" *ngIf="ctrl6.invalid && ctrl6.touched && ctrl6.errors['required']">
+                       Required field!
+                   </small>
+              </div>
+              </div>
+                       <div class="form-group row">
+                               <label for="zipcode-input" class="col-4 col-form-label">zipcode : </label>
+                               <div class="col-8">
+                               <input class="form-control" type="text" [(ngModel)]="model.address.zipcode" name="zipcode" #ctrl7="ngModel"  class="form-control" id="input7" 
+                   [class.form-control-danger]="ctrl7.invalid && ctrl7.touched" required>
+            <small class="form-text error" *ngIf="ctrl7.invalid && ctrl7.touched && ctrl7.errors['required']"> 
+                   Required field!
+               </small>
+          </div>
+          </div>
+        </div>
+          
+                            <div class="form-group row">
+                                <label for="phone-input" class="col-4 col-form-label">phone : </label>
+                                <div class="col-8">
+                                <input class="form-control"   pattern="^[0-9-+()]*$" [(ngModel)]="model.phone" name="phone" #ctrl8="ngModel"  class="form-control" id="input8" placeholder=""
+                            [class.form-control-danger]="ctrl8.invalid && ctrl8.touched" required>
+                     <small class="form-text error" *ngIf="ctrl8.invalid && ctrl8.touched && ctrl8.errors['required']">
+                         Required field!
+                     </small>
+                                </div>
+                                </div>
+          
+                                <div class="form-group row">
+                                    <label for="website-input" class="col-4 col-form-label">website : </label>
+                                    <div class="col-8">
+                                    <input class="form-control" type="text" [(ngModel)]="model.website" name="website" #ctrl9="ngModel"  class="form-control" id="input9" placeholder=""
+                            [class.form-control-danger]="ctrl9.invalid && ctrl9.touched" required>
+                     <small class="form-text error" *ngIf="ctrl9.invalid && ctrl9.touched && ctrl9.errors['required']">
+                         Required field!
+                     </small>
+                                    </div>
+                                    </div>
+          
+                                    <div class="form-group row">
+                                        <label for="company-input" class="col-4 col-form-label">company : </label>
+                                        <div class="col-8">
+                                        <input class="form-control" type="text" [(ngModel)]="model.company" name="company" #ctrl10="ngModel"  class="form-control" id="input10" placeholder=""
+                            [class.form-control-danger]="ctrl10.invalid && ctrl10.touched" required>
+                     <small class="form-text error" *ngIf="ctrl10.invalid && ctrl10.touched && ctrl10.errors['required']">
+                                     
+ Required field!
+                     </small>									 </div>
+                                         </div>
+										 <div class="form-group row" >
+										 <div class="col-4">
+										 </div>
+										 <div class="col-4">
+										 	<button class="edit" (click)="editContact(Contact.id)">Save</button>
+											</div>
+											<div class="col-4">
+										<button class="delete"(click)="onNoClick()">Cancel</button>
+										 
+										 </div>
+										 </div>
+    </form>
+  </div>
+</mat-card-content>
