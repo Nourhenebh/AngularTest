@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ContactService } from '../contact.service';
@@ -32,6 +32,7 @@ export class ContactComponent implements OnInit {
       username: [ this.data.username, [Validators.required]],
       email: [ this.data.email, [Validators.required]],
       phone: [ this.data.phone , [Validators.required]],
+      
       address: this._formBuilder.group({
             street: [ this.data.address.street, [Validators.required]],
             suite: [ this.data.address.suite, [Validators.required]],
@@ -40,8 +41,9 @@ export class ContactComponent implements OnInit {
             }),
             /*https://toddmotto.com/angular-2-forms-reactive#formbuilder-code*/
       website: [ this.data.website , [Validators.required]],
-      campany: [ this.data.campany , [Validators.required]]
+      company: [ this.data.company , [Validators.required]]
     });
+
   }
 
   onSubmit() {

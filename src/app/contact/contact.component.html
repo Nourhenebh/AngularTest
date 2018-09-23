@@ -8,7 +8,7 @@
 
 <mat-card-content>
   <div class="container">
-        <form #f="ngForm"   (ngsubmit)="onSubmit(f)" [formGroup]="_contactForm">
+        <form #f="ngForm"   (ngsubmit)="onSubmit(f)">
     
         <div class="form-group row">
             <label for="name-input" class="col-4 col-form-label">Name : </label>
@@ -46,7 +46,7 @@
                     </div>
                     </div>
 			
-                     <div formGroupName="address" class="form-group row">
+                     <div class="form-group row">
                            <label for="adresse-input" class="col-4 col-form-label">Adresse </label>
                            <div class="col-8">
                          </div>
